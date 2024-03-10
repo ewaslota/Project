@@ -20,9 +20,20 @@ public class RequestParamController {
     @GetMapping("/param/add")
     public Integer add(@RequestParam List<Integer> numbers) {
         int result = 0;
-        for(Integer number : numbers) {
+        for (Integer number : numbers) {
             result += number;
         }
         return result;
+    }
+
+    @GetMapping("/param/compare")
+    public String compare(@RequestParam Integer left, @RequestParam Integer right) {
+        if (left > right) {
+            return "LEFT";
+        } else if (right > left) {
+            return "RIGHT";
+        } else {
+            return "EQUALS";
+        }
     }
 }
