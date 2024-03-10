@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class RequestParamController {
 
@@ -13,5 +15,14 @@ public class RequestParamController {
                          @RequestParam(required = false, defaultValue = "") String right) {
 
         return left.concat(right);
+    }
+
+    @GetMapping("/param/add")
+    public Integer add(@RequestParam List<Integer> numbers) {
+        int result = 0;
+        for(Integer number : numbers) {
+            result += number;
+        }
+        return result;
     }
 }
