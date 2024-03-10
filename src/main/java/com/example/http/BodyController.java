@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 class User {
     private String name;
@@ -45,7 +47,12 @@ public class BodyController {
     }
 
     @PutMapping("/body/save")
-    public User put(@RequestBody User user) {
-        return user;
+    public List<User> put(@RequestBody User user) {
+        return List.of (
+                user,
+                user,
+                user,
+                user
+        );
     }
 }

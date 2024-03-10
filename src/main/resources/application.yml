@@ -2,3 +2,14 @@
 #   servlet:
 #     context-path: /test
 #    port: 8080
+
+#springdoc:
+#  show-actuator: true
+#  use-management-port: true
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  server:
+#    port: 8888
